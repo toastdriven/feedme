@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <title>FeedMe!</title>
+        <%= stylesheet_link_tag 'feedme' %>
+        <%= javascript_include_tag 'jquery', 'application' %>
+    </head>
+    
+    <body>
+        <div id="main_column">
+            <div id="header">
+                <h1>FeedMe!</h1>
+                
+                <div id="tagline">
+                    RSS NOM NOM NOM
+                </div>
+            </div>
+            
+            <div id="navigation">
+                
+            </div>
+            
+            <div id="content">
+                <%= yield %>
+            </div>
+            
+            <div id="footer">
+                Code by <a href="http://www.toastdriven.com/" title="Toast Driven">Toast Driven</a> - &copy; 2008
+            </div>
+        </div>
+    </body>
+</html>
