@@ -18,6 +18,12 @@
                 </div>
             </div>
             
+            <% if flash[:error] %>
+                <div id="flash">
+                    <%= flash[:error] %>
+                </div>
+            <% end %>
+            
             <div id="navigation">
                 
             </div>

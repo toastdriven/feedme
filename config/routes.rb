@@ -32,6 +32,8 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
+  map.root :controller => 'timeline', :action => 'articles_for'
+  map.login 'login', :controller => 'login', :action => 'login'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

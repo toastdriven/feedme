@@ -11,8 +11,12 @@ class ApplicationController < ActionController::Base
   
   protected
   def ensure_logged_in
-    if not session[:user]
-      redirect_to :controller => 'login', :action => 'login'
+    if session[:user]
+      if VALID_USERS.has_key? session[:user]
+        return true
+      end
     end
+    
+    redirect_to :controller => 'login', :action => 'login'
   end
 end

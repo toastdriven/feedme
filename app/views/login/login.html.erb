@@ -1,0 +1,30 @@
+<% form_tag do %>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="username">Username:</label>
+                </td>
+                <td>
+                    <%= text_field_tag 'username' %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Password:</label>
+                </td>
+                <td>
+                    <%= password_field_tag 'password' %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    <%= submit_tag 'Login!' %>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<% end %>

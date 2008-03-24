@@ -1,0 +1,19 @@
+<div clas="article">
+    <div class="article_source">
+        <h3><%= article.rss_feed.title %></h3>
+    </div>
+    
+    <div class="article_header">
+        <h2><%= link_to h(article.title), article.link %></h2>
+        
+        <span><%= article.published %></span>
+    </div>
+
+    <div class="article_author">
+        <%= h(article.author) %>
+    </div>
+    
+    <div class="article_content">
+        <%= article.content %>
+    </div>
+</div>
