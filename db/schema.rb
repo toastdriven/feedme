@@ -9,6 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 2) do
+
+  create_table "rss_articles", :force => true do |t|
+    t.integer  "rss_feed_id"
+    t.string   "title"
+    t.string   "link"
+    t.string   "author"
+    t.text     "content"
+    t.datetime "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rss_feeds", :force => true do |t|
+    t.string   "title",      :null => false
+    t.string   "url",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
