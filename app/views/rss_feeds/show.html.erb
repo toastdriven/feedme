@@ -1,3 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @rss_feed.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @rss_feed.url %>
+</p>
+
 
 <%= link_to 'Edit', edit_rss_feed_path(@rss_feed) %> |
 <%= link_to 'Back', rss_feeds_path %>

@@ -2,10 +2,14 @@
 
 <table>
   <tr>
+    <th>Title</th>
+    <th>Url</th>
   </tr>
 
 <% for rss_feed in @rss_feeds %>
   <tr>
+    <td><%=h rss_feed.title %></td>
+    <td><%=h rss_feed.url %></td>
     <td><%= link_to 'Show', rss_feed %></td>
     <td><%= link_to 'Edit', edit_rss_feed_path(rss_feed) %></td>
     <td><%= link_to 'Destroy', rss_feed, :confirm => 'Are you sure?', :method => :delete %></td>

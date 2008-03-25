@@ -4,6 +4,16 @@
 
 <% form_for(@rss_feed) do |f| %>
   <p>
+    <b>Title</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Url</b><br />
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
     <%= f.submit "Create" %>
   </p>
 <% end %>
