@@ -25,7 +25,15 @@
             <% end %>
             
             <div id="navigation">
+                <h2>Archives</h2>
                 
+                <ul>
+                    <% for day_offset in 0..6 %>
+                        <li>
+                            <a href="/<%= (Time.now - day_offset.days).strftime('%Y/%m/%d') %>"><%= (Time.now - day_offset.days).strftime('%B %d, %Y') %></a>
+                        </li>
+                    <% end %>
+                </ul>    
             </div>
             
             <div id="content">

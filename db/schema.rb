@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(:version => 2) do
   end
 
   create_table "rss_feeds", :force => true do |t|
-    t.string   "title",      :null => false
-    t.string   "url",        :null => false
+    t.string   "title",      :default => "", :null => false
+    t.string   "url",        :default => "", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

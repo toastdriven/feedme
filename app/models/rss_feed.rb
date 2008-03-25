@@ -9,10 +9,10 @@ class RssFeed < ActiveRecord::Base
   
   def process_rss_feed(xml)
     rss = Hpricot.XML(xml)
+    time_offset = 1
     
     (rss/:channel/:item).each do |item|
       link = (item/:link).inner_html
-      time_offset = 1
       
       if not RssArticle.find_by_link(link)
         rss_article = RssArticle.new
@@ -23,8 +23,8 @@ class RssFeed < ActiveRecord::Base
         rss_article.content = (item/:description).inner_html
         rss_article.published = (item/:pubDate).inner_html
         
-        if rss_article.published == ''
-          rss_article.published = Time.now() - time_offset.hours
+        if not rss_article.published
+          rss_article.published = Time.now - time_offset.hours
           time_offset += 1
         end
         

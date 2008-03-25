@@ -1,5 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :rss_feeds
+  
+  map.root :controller => 'timeline', :action => 'articles_for'
+  map.articles_for ':year/:month/:day', :controller => 'timeline', :action => 'articles_for'
+  map.login 'login', :controller => 'login', :action => 'login'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -32,8 +36,6 @@ ActionController::Routing::Routes.draw do |map|
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
-  map.root :controller => 'timeline', :action => 'articles_for'
-  map.login 'login', :controller => 'login', :action => 'login'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

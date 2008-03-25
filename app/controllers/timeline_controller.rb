@@ -1,7 +1,16 @@
 class TimelineController < ApplicationController
   def articles_for
-    @current_date = Date.today
-    @articles = RssArticle.find(:all, :conditions => ['published = ?', @current_date])
+    if params[:year].nil? or params[:month].nil? or params[:day].nil?
+      @current_date = Time.now
+    else
+      @current_date = Time.parse("#{params[:year]}-#{params[:month]}-#{params[:day]}")
+    end
+    
+    @start_at = @current_date.end_of_day
+    @end_at = @current_date.beginning_of_day
+    @articles = RssArticle.find :all, 
+                                :conditions => ['published BETWEEN ? AND ?', @end_at, @start_at],
+                                :order => 'published DESC'
   end
   
   def articles_from

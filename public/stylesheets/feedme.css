@@ -57,6 +57,10 @@ ul, ol, dl {
     margin-bottom: 10px;
 }
 
+#header h1 {
+    font-size: 38px;
+}
+
 #flash {
     border: solid 1px #CCCCCC;
     background-color: #F0F0F0;
@@ -64,6 +68,7 @@ ul, ol, dl {
 }
 
 #navigation {
+    border-right: solid 1px #333333;
     float: left;
     margin-top: 10px;
     width: 150px;
@@ -74,7 +79,7 @@ ul, ol, dl {
     margin-left: 10px;
     margin-top: 10px;
     min-height: 200px;
-    width: 700px;
+    width: 500px;
 }
 
 #footer {

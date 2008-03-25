@@ -1,3 +1,1 @@
-<% @articles.each do |article| %>
-    <%= render :partial => 'article' %>
-<% end %>
+<%= render :partial => 'article', :collection => @articles %>
