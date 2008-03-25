@@ -1,4 +1,6 @@
 class TimelineController < ApplicationController
+  before_filter :get_feeds
+  
   def articles_for
     if params[:year].nil? or params[:month].nil? or params[:day].nil?
       @current_date = Time.now
@@ -13,7 +15,9 @@ class TimelineController < ApplicationController
                                 :order => 'published DESC'
   end
   
-  def articles_from
-    
+  
+  protected
+  def get_feeds
+    @feeds = RssFeed.find :all, :order => 'title'
   end
 end

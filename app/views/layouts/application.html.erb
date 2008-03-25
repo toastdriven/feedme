@@ -33,7 +33,19 @@
                             <a href="/<%= (Time.now - day_offset.days).strftime('%Y/%m/%d') %>"><%= (Time.now - day_offset.days).strftime('%B %d, %Y') %></a>
                         </li>
                     <% end %>
-                </ul>    
+                </ul>
+                
+                <% if @feeds %>
+                    <br />
+                    
+                    <h2>Feeds</h2>
+                    
+                    <ul>
+                        <% @feeds.each do |feed| %>
+                            <li><%= link_to feed.title, feed.url %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
             </div>
             
             <div id="content">

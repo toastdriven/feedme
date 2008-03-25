@@ -1,1 +1,7 @@
-<%= render :partial => 'article', :collection => @articles %>
+<% if @articles.size > 0 %>
+    <%= render :partial => 'article', :collection => @articles %>
+<% else %>
+    <h2>No Articles</h2>
+    
+    <p>No one seems to have posted anything today. Sorry.</p>
+<% end %>

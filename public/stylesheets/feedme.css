@@ -76,9 +76,10 @@ ul, ol, dl {
 
 #content {
     float: left;
+    margin-bottom: 10px;
     margin-left: 10px;
     margin-top: 10px;
-    min-height: 200px;
+    min-height: 260px;
     width: 500px;
 }
 
