@@ -3,6 +3,29 @@ h1. FeedMe!
 A better (for me) RSS Aggregator.
 
 *Author:* Daniel Lindsley <daniel@toastdriven.com>
+
 *License:* MIT
-*Last Updated:* 2008/03/24
+
+*Last Updated:* 2008/03/25
+
 *Version:* 0.1
+
+h2. Requirements
+
+* A decent version of Ruby.
+* Rails 2.0+
+* Hpricot
+* open-uri
+* Balls of steel and an iron will.
+
+h2. Installing
+
+# Grab the code.
+# Copy the '@config/database.yml.dist@' to '@config/database.yml@'. Reconfigure as necessary.
+# Copy the '@config/initializers/feedme.rb.dist@' to '@config/initializers/feedme.rb@'.
+## Due to my *cough* wonderfully advanced and secure login setup, add users to the '@VALID_USERS@' hash in '@config/initializers/feedme.rb@'.
+# Fire up the server.
+# Go to '@http://example.com/login@' and enter your details.
+# Add RSS feeds to the admin.
+# Run (preferably via cron) '@rake feedme:pull_feeds@'.
+# Hit up '@http://example.com/@' and enjoy.
