@@ -83,6 +83,27 @@ ul, ol, dl {
     width: 500px;
 }
 
+.article {
+    border-bottom: dotted 1px #666666;
+    margin-bottom: 30px;
+}
+
+.article_header {
+    margin-bottom: 10px;
+}
+
+.article_header h2 {
+    margin-bottom: 5px;
+}
+
+.article_header span {
+    color: #666666;
+}
+
+.article_content {
+    margin-bottom: 10px;
+}
+
 #footer {
     border-top: solid 1px #333333;
     clear: both;

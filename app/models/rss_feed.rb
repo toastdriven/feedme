@@ -2,7 +2,7 @@ require 'hpricot'
 require 'open-uri'
 
 class RssFeed < ActiveRecord::Base
-  has_many :rss_articles
+  has_many :rss_articles, :dependent => :delete_all
   
   validates_presence_of :title
   validates_presence_of :url
@@ -28,6 +28,10 @@ class RssFeed < ActiveRecord::Base
           time_offset += 1
         end
         
+        # Fix the content to be HTML once again...
+        rss_article.title = bring_back_the_html(rss_article.title)
+        rss_article.content = bring_back_the_html(rss_article.content)
+        
         rss_article.save()
       end
     end
@@ -45,6 +49,15 @@ class RssFeed < ActiveRecord::Base
     end
     
     the_rss
+  end
+  
+  def bring_back_the_html(stringy)
+    stringy.gsub!('&lt;', '<')
+    stringy.gsub!('&gt;', '>')
+    stringy.gsub!('&amp;', '&')
+    stringy.gsub!('&#39;', "'")
+    stringy.gsub!('&quot;', '"')
+    stringy
   end
   
   def test_feed

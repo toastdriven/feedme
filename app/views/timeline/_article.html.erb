@@ -1,8 +1,8 @@
-<div clas="article">
+<div class="article">
     <div class="article_header">
-        <h2><%= link_to h(article.title), article.link %> (<%= article.rss_feed.title %>)</h2>
+        <h2><%= link_to h(article.title), article.link %></h2>
         
-        <span><%= article.published.strftime('%A, %B %d, %Y @ %I:%M %p') %></span>
+        <span><%= article.rss_feed.title %> - <%= article.published.strftime('%A, %B %d, %Y @ %I:%M %p') %></span>
     </div>
 
     <div class="article_author">
