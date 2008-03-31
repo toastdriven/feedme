@@ -17,7 +17,7 @@ class RssFeed < ActiveRecord::Base
       process_atom_feed(doc)
       return 'atom'
     else
-      raise RuntimeError, 'Unknown Feed Type! Only RSS 2.0 & Atom can be read.'
+      raise RuntimeError, "Unknown Feed Type for '#{url}'! Only RSS 2.0 & Atom can be read."
     end
   end
   

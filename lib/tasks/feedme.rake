@@ -6,8 +6,14 @@ namespace :feedme do
     feeds = RssFeed.find(:all)
     
     feeds.each do |feed|
-      the_feed_xml = feed.pull_feed
-      feed.process_feed(the_feed_xml)
+      begin
+        the_feed_xml = feed.pull_feed
+        feed.process_feed(the_feed_xml)
+      rescue RuntimeError => e
+        # Silent but deadly...well, not so much.
+        # Let's note this and move on to the next feed.
+        puts e
+      end
     end
   end
 end
