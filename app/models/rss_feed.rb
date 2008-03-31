@@ -62,8 +62,12 @@ class RssFeed < ActiveRecord::Base
         atom_article.title = (item/:title).inner_html
         atom_article.link = link
         atom_article.author = (item/:author/:name).inner_html
-        atom_article.content = (item/:summary).inner_html
+        atom_article.content = (item/:content).inner_html
         atom_article.published = (item/:published).inner_html
+        
+        if not atom_article.content
+          atom_article.content = (item/:summary).inner_html
+        end
         
         if not atom_article.published
           atom_article.published = Time.now - time_offset.hours
