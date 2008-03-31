@@ -6,8 +6,8 @@ namespace :feedme do
     feeds = RssFeed.find(:all)
     
     feeds.each do |feed|
-      the_rss = feed.pull_feed
-      feed.process_rss_feed(the_rss)
+      the_feed_xml = feed.pull_feed
+      feed.process_feed(the_feed_xml)
     end
   end
 end
