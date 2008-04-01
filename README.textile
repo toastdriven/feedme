@@ -1,14 +1,14 @@
 h1. FeedMe!
 
-A better (for me) RSS Aggregator.
+A better (for me) RSS/Atom aggregator.
 
 *Author:* Daniel Lindsley <daniel@toastdriven.com>
 
 *License:* MIT
 
-*Last Updated:* 2008/03/25
+*Last Updated:* 2008/03/30
 
-*Version:* 0.1
+*Version:* 0.2
 
 h2. Requirements
 
